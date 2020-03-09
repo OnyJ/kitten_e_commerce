@@ -9,7 +9,6 @@ images_urls_array = ["data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAk
                 "https://www.purina.com.au/-/media/Project/Purina/Main/Breeds/Cat/Mobile/Cat_Abyssinian_Mobile.jpg?h=300&la=en&w=375&hash=5F9878D8DECBED6B1795161CEC50C74A",
                 "https://www.petmd.com/sites/default/files/petmd-cat-snoring.jpg",
                 "http://www.petsworld.in/blog/wp-content/uploads/2014/09/adorable-cat.jpg",
-                "https://wallpaper4rest.com/animals/wallpaper/wallpaper-of-cats-and-kittens_1.jpeg",
                 "https://static01.nyt.com/images/2019/06/04/nyregion/04claws2/04claws2-threeByTwoSmallAt2X.jpg",
                 "https://www.petsfriendsunnyvale.com/storage/app/media/bigstock-British-Longhair-Cat--Months-10206431.jpg"
               ]
