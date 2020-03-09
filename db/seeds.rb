@@ -31,7 +31,7 @@ descriptions_array = ["Cute cat picture perfect for a bedroom.",
 20.times do
   Item.create(
     title: ["Cat", "Kitty"].sample + " picture, by " + Faker::Artist.name,
-    description: .sample,
+    description: descriptions_array.sample,
     price: [29.99, 39.99, 69.99, 99.99, 129.99, 249.99].sample,
     image_url: images_urls_array.sample
   )
