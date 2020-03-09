@@ -93,5 +93,5 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Linking mailer to production version
-  config.action_mailer.default_url_options = { :host => 'kitten-pixtore-staging.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'https://kitten-pixtore-staging.herokuapp.com' }
 end
