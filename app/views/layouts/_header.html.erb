@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <%= link_to root_path, :class => "navbar-brand font-weight-bold" do %>
+    <%= image_tag("https://i.pinimg.com/originals/05/20/45/0520457e048ab6d28a0a14cb7998658a.png", width:"50", height:"50", class: "mr-3") %>
+    kitten pixtore.
+  <% end %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarColor03">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <div class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+        <%= link_to('javascript:;', :class => "btn btn-primary my-2 my-sm-0 font-weight-bold") do %>
+          <u>Mon compte</u>
+        <% end %>
+        <%= link_to('javascript:;', :class => "btn btn-warning font-weight-bold mr-2 ml-2") do %>
+            <i class="fas fa-cart-plus mr-1"></i>
+            Mon panier
+        <% end %>
+      <% else %>
+        <%= link_to(new_user_registration_path, :class => "btn btn-primary my-2 my-sm-0 font-weight-bold") do %>
+          <u>S'inscrire</u>
+        <% end %>
+        <%= link_to("Se connecter", new_user_session_path, :class => "btn btn-secondary my-2 my-sm-0 ml-2 mr-2 font-weight-bold") %>
+      <% end %>
+    </div>
+  </div>
+</nav>
