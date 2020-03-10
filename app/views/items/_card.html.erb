@@ -1,12 +1,12 @@
 <div class="col-4">
   <div class="card mb-5 mr-5" style="max-width: 20rem;">
-    <div class="card-img"><img src= <%= resource.image_url %> style="height: 250px; width: 100%; display: block;"></div>
+    <div class="card-img"><img src= <%= item.image_url %> style="height: 250px; width: 100%; display: block;"></div>
       <div class="card-body">
-        <h4 class="card-title"><%= resource.title %></h4>
-        <p class="card-text mb-1">Prix : <%= resource.price %>€</p>
+        <h4 class="card-title"><%= item.title %></h4>
+        <p class="card-text mb-1">Prix : <%= item.price %>€</p>
         <div class="btn-group mt-3" role="group" aria-label="Basic example">
         <!--Modif le javascript par le show_path-->
-          <%= link_to "+ d'infos", 'javascript:;', :class => "btn btn-outline-info btn-sm"%>
+          <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-info btn-sm" %>
         </div>
       </div>
     </div>
