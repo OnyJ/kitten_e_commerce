@@ -1,14 +1,14 @@
 <div class="container">
- <div class="card-img"><img src= <%= @item.image_url %> style="height: 100%; width: 100%; display: block;"></div>
-  <br>
-  <h5><strong><%= @item.title %></h5></strong>
+  <div class="card-img"><img src= <%= @item.image_url %> style="height: 100%; width: 100%; display: block;"></div>
+    <br>
+    <h5><strong><%= @item.title %></h5></strong>
     <hr class="style1">
     <h5><strong>Prix :</strong> <%= @item.price %> €</h5><br>
     <h5><strong>Description :</strong><%= @item.description %></h5><br>
-    <!--Modif le javascript par l'action d'ajouter au panier-->
-    <%= link_to "Ajouter au panier", 'javascript:;' :class => "btn btn-success font-weight-bold" %> 
-    <%= link_to "Retourner à l'accueil", root_path() %>
+    <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mr-2 mb-2" %>
     <hr class="style1">
-    </div>
-    
+    <p> 
+      <%= link_to "Retourner à l'accueil", root_path %>
+    </p>
+  </div>
 </div>
