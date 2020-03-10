@@ -1,0 +1,9 @@
+#page-container {
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 20px;
+}
+
+#content-wrap {
+  margin-bottom: 20px;
+}
