@@ -1,2 +1,14 @@
-<h1>Items#show</h1>
-<p>Find me in app/views/items/show.html.erb</p>
+<div class="container">
+ <div class="card-img"><img src= <%= @item.image_url %> style="height: 100%; width: 100%; display: block;"></div>
+  <br>
+  <h5><strong><%= @item.title %></h5></strong>
+    <hr class="style1">
+    <h5><strong>Prix :</strong> <%= @item.price %> €</h5><br>
+    <h5><strong>Description :</strong><%= @item.description %></h5><br>
+    <!--Modif le javascript par l'action d'ajouter au panier-->
+    <%= link_to "Ajouter au panier", 'javascript:;' :class => "btn btn-success font-weight-bold" %> 
+    <%= link_to "Retourner à l'accueil", root_path() %>
+    <hr class="style1">
+    </div>
+    
+</div>
