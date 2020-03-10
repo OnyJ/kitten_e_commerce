@@ -5,8 +5,7 @@
     <hr class="style1">
     <h5><strong>Prix :</strong> <%= @item.price %> €</h5><br>
     <h5><strong>Description :</strong><%= @item.description %></h5><br>
-    <!--Modif le javascript par l'action d'ajouter au panier -->
-    <%= link_to "Ajouter au panier", class: "btn btn-success font-weight-bold mr-2 mb-2" %>
+    <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mr-2 mb-2" %>
     <hr class="style1">
     <p> 
       <%= link_to "Retourner à l'accueil", root_path %>

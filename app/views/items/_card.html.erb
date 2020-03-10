@@ -7,6 +7,7 @@
         <div class="btn-group mt-3" role="group" aria-label="Basic example">
         <!--Modif le javascript par le show_path-->
           <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-info btn-sm" %>
+          <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold mr-2 mb-2" %>
         </div>
       </div>
     </div>

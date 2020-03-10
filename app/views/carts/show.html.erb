@@ -1,2 +1,44 @@
-<h1>Carts#show</h1>
-<p>Find me in app/views/carts/show.html.erb</p>
+<h1> Mon panier :</h1>
+  <div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"> </th>
+                            <th scope="col">Produit</th>
+                            <th scope="col" class="text-right">Prix</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <% @cart.items.each do |item| %> 
+                        <tr>
+                            <td><img src= <%= item.image_url %> style= "height: 50px; width: 50px"> </td>
+                            <td><%= item.title %></td>
+                            <td class="text-right"><%= item.price %> €</td>
+                            <td class="text-right"><%= link_to "Supprimer article", cart_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %><i class="fa fa-trash"></i></td>
+                        </tr>
+                        <% end %>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong><%= @cart.total_price %></strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <%= link_to "Continuer les achats", root_path, class: "btn btn-block btn-light" %> 
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <%= link_to "Finaliser les achats", class:"btn btn-lg btn-block btn-success text-uppercase" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
