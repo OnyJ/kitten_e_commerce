@@ -10,10 +10,12 @@
 
      <!-- Bootswatch CSS CDN - Menty Theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/5179dfb87c.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <div id="page-container">
+      <%= render 'layouts/header' %>
       <div id="content-wrap">
         <%= yield %>
       </div>
