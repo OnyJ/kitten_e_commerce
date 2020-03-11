@@ -1,14 +1,18 @@
 <div class="container">
-  <div class="card-img"><img src= <%= @item.image_url %> style="height: 100%; width: 100%; display: block;"></div>
-    <br>
-    <h5><strong><%= @item.title %></h5></strong>
-    <hr class="style1">
-    <h5><strong>Prix :</strong> <%= @item.price %> €</h5><br>
-    <h5><strong>Description :</strong><%= @item.description %></h5><br>
-    <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mr-2 mb-2" %>
-    <hr class="style1">
-    <p> 
-      <%= link_to "Retourner à l'accueil", root_path %>
-    </p>
-  </div>
+  <div class="row mt-5 mb-5">
+    <div class="col">
+      <img src= <%= @item.image_url %> style="height: auto; width: 100%">
+    </div>
+    <div class="col">
+      <h3 class="mt-3"><strong><%= @item.title %></h3></strong>
+      <hr class="style1">
+      <h5 class="mt-4"><strong>Prix :</strong> <div class="badge badge-light"><%= @item.price %> €</div></h5>
+      <h5 class="mt-3"><strong>Description : </strong></h5>
+      <p><%= @item.description %></p>
+      <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mt-5 mb-2" %>
+      <hr class="style1">
+      <p> 
+        <%= link_to "Retourner à l'accueil", root_path %>
+      </p>
+    </div>
 </div>
