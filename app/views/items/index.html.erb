@@ -11,17 +11,17 @@
 
 <body>
   <div class="jumbotron">
-    <h1 class="display-2 mt-4 text-center">Bienvenue sur PIXTORE !</h1>
+    <h1 class="display-2 mt-4 text-center">Bienvenue sur <strong>Pixtore</strong> !</h1>
     </p>
   </div>
   
   <div class="container">
-  <h3 class="display-4 mb-4 text-center">Voici le contenu de notre catalogue :</h3>
-    <div class="row">
-      <% @items.each do |item| %>
-        <%= render partial: "card", locals: { item: item }%>    
-      <% end %>
-    </div>
+  <h1 class="text-center font-weight-bold mb-4">Voici le contenu de notre catalogue :</h3>
+  <div class="row">
+    <% @items.each do |item| %>
+      <%= render partial: "card", locals: { item: item }%>    
+    <% end %>
   </div>
+</div>
 </body>
 </html>
