@@ -1,27 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
-  <title>Pixtore</title>
-</head>
-
-<body>
-  <div class="jumbotron">
-    <h1 class="display-2 mt-4 text-center">Bienvenue sur <strong>Pixtore</strong> !</h1>
-    </p>
-  </div>
-  
-  <div class="container">
-  <h1 class="text-center font-weight-bold mb-4">Voici le contenu de notre catalogue :</h3>
+<div class="jumbotron">
+  <h1 class="mt-4 text-center">Bienvenue sur <strong>Pixtore</strong> !</h1>
+</div>
+<div class="container mt-4">
+  <h3 class="text-center font-weight-bold mb-4">Voici le contenu de notre catalogue :</h3>
   <div class="row">
     <% @items.each do |item| %>
       <%= render partial: "card", locals: { item: item }%>    
     <% end %>
   </div>
 </div>
-</body>
-</html>
