@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KittenECommerce</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Kitten Pixtore</title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,11 +14,18 @@
      <!-- Bootswatch CSS CDN - Menty Theme -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/5179dfb87c.js" crossorigin="anonymous"></script>
+    <!-- Small icon -->
+    <link rel="icon" type="image/png" href="https://i.pinimg.com/originals/05/20/45/0520457e048ab6d28a0a14cb7998658a.png" sizes="32x32">
   </head>
 
   <body>
     <div id="page-container">
       <%= render 'layouts/header' %>
+      <% if notice %>
+        <div class='alert alert-success p-2'>
+          <%= notice %>
+        </div>
+      <% end %>
       <div id="content-wrap">
         <%= yield %>
       </div>

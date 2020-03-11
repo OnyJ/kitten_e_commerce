@@ -1,14 +1,13 @@
-<div class="col-4">
-  <div class="card mb-5 mr-5" style="max-width: 20rem;">
-    <div class="card-img"><img src= <%= item.image_url %> style="height: 250px; width: 100%; display: block;"></div>
-      <div class="card-body">
-        <h4 class="card-title"><%= item.title %></h4>
-        <p class="card-text mb-1">Prix : <%= item.price %>€</p>
-        <div class="btn-group mt-3" role="group" aria-label="Basic example">
-        <!--Modif le javascript par le show_path-->
-          <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-info btn-sm" %>
-          <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold mr-2 mb-2" %>
-        </div>
+<div class="col-lg-4 col-sm-6 col-md-6 p-5">
+  <div class="card">
+    <div class="card-img"><%= link_to image_tag(item.image_url, height: "190px", width: "100%"), item_path(item) %></div>
+    <div class="card-body">
+      <h4 class="card-title font-weight-bold text-dark"><%= item.title %></h4>
+      <div class="badge badge-pill badge-light"><%= item.price %> €</div>
+      <div class="btn-group btn-group-toggle mt-3" data-toggle="buttons">
+        <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-success btn-sm" %>
+        <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold btn-sm" %>
       </div>
     </div>
+  </div>
 </div>

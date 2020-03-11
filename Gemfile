@@ -20,6 +20,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 
 gem 'devise'
+gem 'dotenv'
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'table_print'
 gem 'dotenv'
