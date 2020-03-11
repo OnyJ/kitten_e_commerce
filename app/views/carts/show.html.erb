@@ -9,16 +9,18 @@
                       <tr>
                           <th scope="col"></th>
                           <th scope="col">Produit</th>
-                          <th scope="col" class="text-left">Prix</th>
+                          <th scope="col">Prix de l'article</th>
+                          <th scope="col">Quantité</th>
                           <th class="text-right">Supprimer</th>
                       </tr>
                   </thead>
                   <tbody>
                   <% @cart.items.each do |item| %> 
                       <tr class="font-weight-light">
-                          <td style="width: 5%"><%= link_to image_tag(item.image_url, height: "40px", width: "50px"), item_path(item) %></td>
+                          <td style="width: 5%"><%= link_to image_tag(item.image_url, height: "40px", width: "50px", class: "rounded"), item_path(item) %></td>
                           <td style="width: 25%" class="align-middle"><%= link_to item.title, item_path(item), class: "text-muted" %></td>
-                          <td class="align-middle"><%= item.price %> €</td>
+                          <td style="width: 15%" class="align-middle"><%= item.price %> €</td>
+                          <td style="width: 3%" class="align-middle"><input type="number" value="1" min="1" max="1000" step="1" class="form-control text-center"></td>
                           <td class="text-right" class="align-middle"><%= link_to cart_path(item), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger mr-3" do %><i class="fa fa-trash align-middle"></i><% end %></td>
                       </tr>
                       <% end %>
