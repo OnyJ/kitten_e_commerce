@@ -1,0 +1,11 @@
+<% if resource.errors.any? %>
+  <div class="alert alert-danger" role="alert" id="error_explanation">
+    <h5><%= pluralize(resource.errors.count, "error") %> prohibited this article from being saved:</h5>
+ 
+    <ul>
+    <% resource.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
