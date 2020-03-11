@@ -2,9 +2,9 @@
   <div class="card">
     <div class="card-img"><%= link_to image_tag(item.image_url, height: "190px", width: "100%"), item_path(item) %></div>
     <div class="card-body">
-      <h4 class="card-title font-weight-bold"><%= item.title %></h4>
-      <p class="card-text mb-1"><strong>Prix :</strong> <%= item.price %> €</p>
-      <div class="btn-group btn-group-toggle mt-2" data-toggle="buttons">
+      <h4 class="card-title font-weight-bold text-dark"><%= item.title %></h4>
+      <div class="badge badge-pill badge-light"><%= item.price %> €</div>
+      <div class="btn-group btn-group-toggle mt-3" data-toggle="buttons">
         <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-success btn-sm" %>
         <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold btn-sm" %>
       </div>
