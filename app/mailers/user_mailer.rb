@@ -10,5 +10,4 @@ class UserMailer < ApplicationMailer
     # send and select the recipient
     mail(to: @user.email, subject: 'Bienvenue sur Kitten Pixtore !')
   end
-
 end
