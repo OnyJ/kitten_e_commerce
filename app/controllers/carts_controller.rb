@@ -5,7 +5,10 @@ class CartsController < ApplicationController
 
   def update
     @cart = current_user.cart
-    @cart.items << Item.find(params[:id])
+    @item = Item.find(params[:id])
+    @cart.items << @item
+
+    flash[:notice] = "L'article #{@item.title} à été ajouté au panier."
 
     redirect_back(fallback_location: root_path)
   end
