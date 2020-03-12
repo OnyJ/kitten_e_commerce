@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :items, path: "photo-de-chat"
   resources :carts,only: [:show, :update, :destroy], path: "mon-panier"
   resources :orders, only: [:index, :create], path: "paiement"
-  resources :profiles
+  resources :profiles, only: [:show]
+
   
   root 'items#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
