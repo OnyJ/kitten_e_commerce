@@ -1,0 +1,27 @@
+button.stripe-button-el,
+button.stripe-button-el>span {
+  background-color: #56CC9D !important;
+  background-image: none !important;
+  display: inline-block !important;
+  height: 40px !important;
+  font-weight: 700 !important;
+  vertical-align: middle !important;
+  border: none !important;
+  border-radius: .4rem !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding-top: 3px !important;
+  float: right !important;
+  min-height: 27px !important;
+  line-height: 1.5;
+  font-size: 1rem;
+  vertical-align: middle;
+  text-shadow: 0 0px 0 !important;
+  font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  }
+
+button.stripe-button-el,
+button.stripe-button-el>span:hover {
+  background-color: #3AC18C !important;
+}
