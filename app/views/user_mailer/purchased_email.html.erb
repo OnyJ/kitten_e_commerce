@@ -7,18 +7,13 @@
     <div class="container">
       <% total = 0 %>
       <h1>Merci d'avoir passé votre commande chez Kitten Pixtore !</h1><br/>
-      <h3>Votre numéro de commande est le <%= @user.order.id %>
+      <h3>Votre numéro de commande est le <%= @user.orders.ids.last %>
       <% if @user.cart.items.length > 1 %>
         <h4>
           Voici les différents articles que vous avez achetés pour un total de : 
           <% total = 0 %>
           <% @user.cart.items.each {|item| total = total + item.price} %>
           <div class="btn btn-small btn-outline-info"><%= total.to_f %></div>
-        </h4>
-      <% else %>
-        <h4>
-          Voici l'article que vous avez acheté pour un total de :
-          <div class="btn btn-small btn-outline-info"><%= @user.cart.items[0].price.to_f %></div>
         </h4>
       <% end %>
       <% @user.cart.items.each do |item| %>
