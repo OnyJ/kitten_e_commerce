@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My profile</title>
+  <script src="https://kit.fontawesome.com/5179dfb87c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body class="mt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6 col-md-6">
+        <div class="card">
+          <div class="card-body bg-light text-dark">
+            <p><strong>Numéro de client : </strong><%= current_user.id %></p>
+            <p><strong>Adresse email : </strong><%= current_user.email %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-lg-11 col-sm-6 col-md-6">
+        <h3 class="text-dark">Mon historique des commandes</h3>
+        <table class="table table-hover table-responsive mt-3">
+          <thead>
+            <tr class="text-dark">
+              <th scope="col">Numéro de commande</th>
+              <th scope="col">Date</th>
+              <th scope="col">Nombre d'articles</th>
+              <th scope="col">Montant total de la commande</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @orders.each do |order| %>
+            <tr>
+                <th scope="row"><%= order.id %></th>
+                <td><%= order.created_at %></td>
+                <td><%= order.items.length %></td>
+                <td><mark><%= order.price.to_f %></mark></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

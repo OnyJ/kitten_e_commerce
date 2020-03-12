@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Bonjour cher Administrateur, une nouvelle commande vient d'être passée sur Kitten Pixtore !</h1>
+      <% if @user.cart.items.length > 1 %>
+        <h4>
+          Voici les différents articles qui viennent d'être achetés pour un total de :
+          <% total = 0 %>
+          <% @user.cart.items.each {|item| total = total + item.price} %>
+          <div class="btn btn-small btn-outline-info"><%= total.to_f %></div>
+        </h4>
+      <% else %>
+        <h4>
+          Voici l'article qui vient d'être acheté pour un total de :
+          <div class="btn btn-small btn-outline-info"><%= @user.cart.items[0].price.to_f %></div>
+        </h4>
+      <% end %>
+      <% @user.cart.items.each do |item| %>
+        <h6 class="mb-2"><%= item.title %></h6>
+        <img src= <%= item.image_url %> class="mb-5">
+      <% end %>
+      <p>
+        Les informations de l'acheteur sont les suivantes :<br>
+        <strong>Email : </strong><%= @user.email %><br>
+        <strong>Profil crée le : </strong><%= @user.created_at %><br>
+        <strong>Commande numéro : </strong><%= @user.order.id %>
+      </p>
+      <h4>A bientôt cher Administrateur !</h4>
+    </div>
+  </body>
+</html>
