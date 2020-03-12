@@ -8,10 +8,15 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
 
   after_create :set_cart
+  after_create :set_profile
   after_create :welcome_send
   
   def set_cart
     Cart.create(user: self)
+  end
+
+  def set_profile
+    Profile.create(user: self)
   end
   
   def welcome_send
