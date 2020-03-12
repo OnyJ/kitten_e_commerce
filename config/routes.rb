@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :items
   resources :carts, only: [:show, :update, :destroy]
-  resources :orders, only: [:index, :create]
+  resources :orders, only: [:index, :create, :new]
   resources :profiles
   
   root 'items#index'

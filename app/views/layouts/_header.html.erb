@@ -11,9 +11,9 @@
     </ul>
     <div class="form-inline my-2 my-lg-0">
       <% if user_signed_in? %>
-        <%= link_to(cart_path(current_user.cart), :class => "btn btn-warning font-weight-bold mr-2 ml-2") do %>
+        <%= link_to(cart_path(current_user.cart), :class => "btn btn-warning font-weight-bold mr-2 ml-2", id: "my-cart-btn") do %>
             <i class="fas fa-cart-plus mr-1"></i>
-            Mon panier
+            Mon panier <% if current_user.cart.items.length > 0 %>(<%= current_user.cart.items.length %>)<% end %>
         <% end %>
         <div class="nav-item dropdown mr-3">
           <a class="nav-link dropdown-toggle font-weight-bold" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">

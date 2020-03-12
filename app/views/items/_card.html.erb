@@ -6,7 +6,7 @@
       <div class="badge badge-pill badge-light"><%= item.price %> €</div>
       <div class="btn-group btn-group-toggle mt-3" data-toggle="buttons">
         <%= link_to "+ d'infos", item_path(item), class: "btn btn-outline-success btn-sm" %>
-        <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold btn-sm" %>
+        <%= link_to "Ajouter au panier", cart_path(item), method: :put, class: "btn btn-success font-weight-bold btn-sm", remote: true %>
       </div>
     </div>
   </div>
