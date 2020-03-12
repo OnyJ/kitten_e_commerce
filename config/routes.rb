@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'profiles/show'
   devise_for :users
   resources :items
   resources :carts, only: [:show, :update, :destroy]
