@@ -37,7 +37,7 @@
                           <!--Table-->
                           </td>
                           <td class="text-right" class="align-middle">
-                            <%= link_to remove_item_cart_path(item_row),method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger mr-3", remote: true do %>
+                            <%= link_to remove_item_cart_path(item_row),method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger mr-3" do %>
                               <i class="fa fa-trash align-middle"></i>
                             <% end %>
                           </td>
@@ -53,25 +53,27 @@
         <p class="mr-3">Total : <strong id="total-order"><%= @cart.total_price %></strong><strong> €</strong><p>
       </div>
       <div class="col-lg-12 col-sm-6 mt-3">
-        <%= form_tag orders_path do %>
-  <article>
-    <% if flash[:error].present? %>
-      <div id="error_explanation">
-        <p><%= flash[:error] %></p>
-      </div>
-    <% end %>
-  </article>
+        <% if current_user.cart.items.any? %>
+            <%= form_tag orders_path do %>
+            <article>
+                <% if flash[:error].present? %>
+                <div id="error_explanation">
+                    <p><%= flash[:error] %></p>
+                </div>
+                <% end %>
+            </article>
 
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="Total à payer : <%= @cart.total_price %> €"
-          data-amount="<%= @amount %>"
-          data-locale="auto"
-          data-email="<%=current_user.email%>"
-          data-currency="eur"
-          data-label="Finaliser la commande"
-          data-locale="fr"></script>
-<% end %>
+            <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                    data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+                    data-description="Total à payer : <%= @cart.total_price %> €"
+                    data-amount="<%= @amount %>"
+                    data-locale="auto"
+                    data-email="<%=current_user.email%>"
+                    data-currency="eur"
+                    data-label="Finaliser la commande"
+                    data-locale="fr"></script>
+            <% end %>
+        <% end %>
         <%= link_to "Continuer les achats", root_path, class: "btn btn-light mb-3 mr-3 float-right" %>
       </div>
   </div>
