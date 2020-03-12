@@ -8,8 +8,7 @@ class Order < ApplicationRecord
   
   def purchased_send
     # Send an email to the user who bought the article
-  # UserMailer.purchased_email(current_user).deliver_now
-    UserMailer.purchased_email(User.find(1)).deliver_now
+    UserMailer.purchased_email(current_user).deliver_now
   end
   
   def sold_send
