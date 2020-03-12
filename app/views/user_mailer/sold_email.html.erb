@@ -6,11 +6,10 @@
   <body>
     <div class="container">
       <h1>Bonjour cher Administrateur, une nouvelle commande vient d'être passée sur Kitten Pixtore !</h1>
+      <!--
       <h4>
         Voici les différents articles qui viennent d'être achetés pour un total de :
-        <% total = 0 %>
-        <% @user.cart.items.each {|item| total = total + item.price} %>
-        <div class="btn btn-small btn-outline-info"><%= total.to_f %></div>
+        <div class="btn btn-small btn-outline-info"><%= @order.user.cart.total_price %></div>
       </h4>
       <p>
         Les informations de l'acheteur sont les suivantes :<br>
@@ -18,6 +17,7 @@
         <strong>Profil crée le : </strong><%= @user.created_at %><br>
         <strong>Commande numéro : </strong><%= @order.id %>
       </p>
+      -->
       <h4>A bientôt cher Administrateur !</h4>
     </div>
   </body>
