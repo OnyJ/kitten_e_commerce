@@ -5,4 +5,5 @@ Visit application at : https://kitten-pixtore-production.herokuapp.com/
 * Ruby 2.5.1
 * Rails 5.2.4
 
-## Development branch
+## Staging version :
+* https://kitten-pixtore-staging.herokuapp.com/
