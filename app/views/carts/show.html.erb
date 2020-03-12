@@ -16,14 +16,28 @@
                       </tr>
                   </thead>
                   <tbody>
-                  <% @cart.items.each do |item| %> 
-                      <tr class="font-weight-light" id="item-<%= item.id %>">
-                          <td style="width: 5%"><%= link_to image_tag(item.image_url, height: "40px", width: "50px", class: "rounded"), item_path(item) %></td>
-                          <td style="width: 25%" class="align-middle"><%= link_to item.title, item_path(item), class: "text-muted" %></td>
-                          <td style="width: 15%" class="align-middle"><%= item.price %> €</td>
-                          <td style="width: 3%" class="align-middle"><input type="number" value="1" min="1" max="1000" step="1" class="form-control text-center"></td>
+                  <% @cart.items.each do |item_row| %> 
+                      <tr class="font-weight-light" id="item-<%= item_row.id %>">
+                          <td style="width: 5%"><%= link_to image_tag(item_row.image_url, height: "40px", width: "50px", class: "rounded"), item_path(item_row) %></td>
+                          <td style="width: 25%" class="align-middle"><%= link_to item_row.title, item_path(item_row), class: "text-muted" %></td>
+                          <td style="width: 15%" class="align-middle"><%= item_row.price %> €</td>
+                          <td style="width: 3%" class="align-middle">
+                          <!--Table-->
+                            <table>
+                                <!--Table body-->
+                                <tbody>
+                                    <tr>
+                                        <td><%= button_to " - ", cart_path(item_row), method: :delete, class: "btn btn-default add-item" %></td>
+                                        <td><%= item_row.line_items.where(cart_id: current_user.cart).first.quantity %></td>
+                                        <td><%= button_to "+", cart_path(item_row), method: :put, class: "btn btn-default add-item" %></td>
+                                    </tr>
+                                </tbody>
+                                <!--Table body-->
+                            </table>
+                          <!--Table-->
+                          </td>
                           <td class="text-right" class="align-middle">
-                            <%= link_to cart_path(item), method: :delete, class: "btn btn-sm btn-danger mr-3", remote: true do %>
+                            <%= link_to remove_item_cart_path(item_row),method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger mr-3", remote: true do %>
                               <i class="fa fa-trash align-middle"></i>
                             <% end %>
                           </td>
