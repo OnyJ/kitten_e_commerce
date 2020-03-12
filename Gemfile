@@ -23,6 +23,7 @@ gem 'devise'
 gem 'dotenv'
 gem 'faker', git: 'https://github.com/stympy/faker.git', branch: 'master'
 gem 'table_print'
+gem 'dotenv'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'

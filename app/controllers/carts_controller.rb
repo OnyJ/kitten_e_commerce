@@ -16,10 +16,14 @@ class CartsController < ApplicationController
   def destroy
     @cart = current_user.cart
     @item = Item.find(params[:id])
-    @item.destroy
-
+    @line_item = LineItem.find_by(cart_id: @cart.id, item_id: @item.id)
+    @line_item.destroy
+    
     flash[:notice] = "Votre article #{@item.title} à été supprimé du panier." if @cart.items.delete(@item)
 
-    redirect_back(fallback_location: root_path)
+    respond_to do |format|
+      format.html { redirect_back(fallback_location: root_path) }
+      format.js { }
+    end
   end
 end
