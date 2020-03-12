@@ -1,0 +1,4 @@
+document.getElementById("flash").classList = "alert alert-dismissible alert-success mt-3 mb-3 col-7";
+document.getElementById("flash").innerHTML = "<i class='fas fa-check-circle'></i> <%= flash[:notice] %> ";
+
+document.getElementById("my-cart-btn").innerHTML = "<i class='fas fa-cart-plus mr-1'></i> Mon panier (<%= @cart.items.length %>)";
