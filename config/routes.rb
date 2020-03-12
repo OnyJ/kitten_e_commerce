@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :items
-  resources :carts, only: [:show, :update, :destroy]
-  resources :orders, only: [:index, :create, :new]
+
+  resources :items, path: "photo-de-chat"
+  resources :carts,only: [:show, :update, :destroy], path: "mon-panier"
+  resources :orders, only: [:index, :create], path: "paiement"
   resources :profiles
   
   root 'items#index'
