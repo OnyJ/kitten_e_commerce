@@ -1,0 +1,17 @@
+Merci d'avoir passé votre commande chez Kitten Pixtore !
+==========================================================
+
+<% if @user.cart.items.length > 1 %>
+  <% total = 0 %>
+  <% @user.cart.items.each {|item| total = total + item.price } %>
+  Voici les différents articles que vous avez achetés pour un total de : <%= total.to_f %>
+<% else %>
+    Voici l'article que vous avez acheté pour un total de : <%= @user.cart.items[0].to_f %>
+<% end %>
+<% @user.cart.items.each do |item| %>
+  <% item.title %> : <% item.price.to_f %> €
+<% end %>
+ 
+Pour accéder à votre espace client, connectez-vous sur : <%= @url %>.
+ 
+À très vite sur Kitten Pixtore !
