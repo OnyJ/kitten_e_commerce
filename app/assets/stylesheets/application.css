@@ -16,4 +16,5 @@
  *= require footer
  *= require cards
  *= require authentication_form
+ *= require stripe_btn
  */
