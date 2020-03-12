@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :items, path: "photo-de-chat"
-  resources :carts,only: [:show, :update, :destroy], path: "mon-panier"
+  resources :carts,only: [:show, :update, :destroy], path: "mon-panier" do
+    member do
+      delete 'remove_item'
+    end
+  end
   resources :orders, only: [:index, :create], path: "paiement"
   resources :profiles, only: [:show]
 
