@@ -23,7 +23,4 @@ class UserMailer < ApplicationMailer
     @url = 'https://kitten-pixtore-staging.herokuapp.com/'
     mail(to: @user.email, subject: "Une commande a été effectuée sur Kitten Pixtore ! \u{1f638}")
   end
-  
-
-
 end
