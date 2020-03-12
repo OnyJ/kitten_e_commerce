@@ -20,7 +20,7 @@
             Mon compte
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <%= link_to(profiles_path(id: current_user.profile), :class => "dropdown-item") do %>
+            <%= link_to(profile_path(id: current_user.profile), :class => "dropdown-item") do %>
               Mes commandes
             <% end %>
             <%= link_to("Modifier mon profil", edit_user_registration_path, :class => "dropdown-item") %>
