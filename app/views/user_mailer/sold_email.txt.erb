@@ -1,15 +1,10 @@
 Bonjour cher Administrateur, une nouvelle commande vient d'être passée sur Kitten Pixtore !
 ==========================================================
 
-<% if @user.cart.items.length > 1 %>
-  <% total = 0 %> 
-  <%= @user.cart.items.each {|item| total = total + item.price } %>
-  Voici les différents articles qui viennent d'être achetés pour un total de : <%= total.to_f %>
-<% else %>
-  Voici l'article que vous avez acheté pour un total de : <%= @user.cart.items[0].price.to_f %>
-<% end %>
-<% @user.cart.items.each do |item| %>
-  <% item.title %> : <% item.price.to_f %> €
+Voici les différents articles qui viennent d'être achetés pour un total de : <%= @order.user.cart.total_price %>
+
+<% @line_items.each do |line| %>
+  <%= line.title %> : <%= line.price.to_f %> €
 <% end %>
  
 Les informations de l'acheteur sont les suivantes :

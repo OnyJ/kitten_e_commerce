@@ -10,15 +10,13 @@
       <h3>Votre numéro de commande est le <%= @order.id %>
       <% if @user.cart.items.length > 1 %>
         <h4>
-          Voici les différents articles que vous avez achetés pour un total de : 
-          <% total = 0 %>
-          <% @user.cart.items.each {|item| total = total + item.price} %>
-          <div class="btn btn-small btn-outline-info"><%= total.to_f %></div>
+          Voici les différents articles que vous avez achetés pour un total de :        
+          <div class="btn btn-small btn-outline-info"><%= @order.user.cart.total_price %></div>
         </h4>
       <% end %>
-      <% @user.cart.items.each do |item| %>
-        <div class="mb-2"><%= item.title %> : <%= item.price.to_f %></div>
-        <img src= <%= item.image_url %> class="mb-5">
+      <% @line_items.each do |line| %>
+        <div class="mb-2"><%= line.title %> : <%= line.price.to_f %></div>
+        <img src= <%= line.image_url %> class="mb-5">
       <% end %>
       <p>
         Pour accéder à votre espace client, connectez-vous sur : <%= @url %>.
@@ -27,3 +25,5 @@
     </div>
   </body>
 </html>
+
+
