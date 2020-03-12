@@ -34,7 +34,7 @@
         <p class="mr-3">Total : <strong><%= @cart.total_price %> €</strong><p>
       </div>
       <div class="col-lg-12 col-sm-6 mt-3">
-        <%= link_to "Commander", 'javascript:;', class:"btn btn-success font-weight-bold float-right" %>
+        <%= link_to "Commander", orders_path, method: :post, class:"btn btn-success font-weight-bold float-right" %>
         <%= link_to "Continuer les achats", root_path, class: "btn btn-light mb-3 mr-3 float-right" %>
       </div>
   </div>
