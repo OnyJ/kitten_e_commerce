@@ -10,7 +10,7 @@
       <h5 class="mt-4"><strong>Prix :</strong> <div class="badge badge-light"><%= @item.price %> €</div></h5>
       <h5 class="mt-3"><strong>Description : </strong></h5>
       <p><%= @item.description %></p>
-      <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mt-5 mb-2", remote: true %>
+      <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mt-5 mb-2" %>
       <hr class="style1">
       <p> 
         <%= link_to "Retourner à l'accueil", root_path %>

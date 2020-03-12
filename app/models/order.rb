@@ -8,15 +8,11 @@ class Order < ApplicationRecord
   
   def purchased_send
     # Send an email to the user who bought the article
-    UserMailer.purchased_email(current_user).deliver_now
+    UserMailer.purchased_email(self).deliver_now
   end
   
   def sold_send
     # Send an email to the user who did create the article
-    User.all.each do |user|
-      if user.profile.is_admin == true
-        UserMailer.sold_email(user).deliver_now
-      end
-    end
+    UserMailer.sold_send(self).deliver_now
   end
 end
