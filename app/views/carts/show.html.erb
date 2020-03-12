@@ -39,6 +39,28 @@
         <p class="mr-3">Total : <strong id="total-order"><%= @cart.total_price %></strong><strong> €</strong><p>
       </div>
       <div class="col-lg-12 col-sm-6 mt-3">
+        <%= form_tag orders_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: <%= @amount %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Finaliser la commande"
+          data-amount="<%= @amount %>"
+          data-locale="auto"
+          data-email="<%=current_user.email%>"
+          data-currency="eur"
+          data-label="Finaliser la commander"
+          data-locale="fr"></script>
+<% end %>
         <%= link_to "Commander", orders_path, method: :post, class:"btn btn-success font-weight-bold float-right" %>
         <%= link_to "Continuer les achats", root_path, class: "btn btn-light mb-3 mr-3 float-right" %>
       </div>
