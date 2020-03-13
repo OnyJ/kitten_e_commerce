@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @amount = current_user.cart.total_price.to_i
+    @amount = current_user.cart.total_price.to_i * 100
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
