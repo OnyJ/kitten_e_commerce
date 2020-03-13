@@ -13,6 +13,6 @@ class Order < ApplicationRecord
   
   def sold_send
     # Send an email to the user who did create the article
-    UserMailer.sold_send(self).deliver_now
+    UserMailer.sold_email(self).deliver_now
   end
 end
