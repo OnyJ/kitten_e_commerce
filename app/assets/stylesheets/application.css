@@ -12,4 +12,9 @@
  *
  *= require_tree .
  *= require_self
+ *= require main
+ *= require footer
+ *= require cards
+ *= require authentication_form
+ *= require stripe_btn
  */

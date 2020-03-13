@@ -1,0 +1,15 @@
+Merci d'avoir passé votre commande chez Kitten Pixtore !
+==========================================================
+
+Voici les différents articles que vous avez achetés pour un total de : <%= @order.user.cart.total_price %> €
+
+Voici le détail de votre commande : 
+
+<% @order.items.each do |line| %>
+  <div class="mb-2"><%= line.title %> : <%= line.price %></div>
+  <img src= <%= line.image_url %> class="mb-5">
+<% end %>
+ 
+Pour accéder à votre espace client, connectez-vous sur : <%= @url %>.
+
+À très vite sur Kitten Pixtore !

@@ -1,0 +1,7 @@
+document.getElementById("flash").classList = "alert alert-dismissible alert-secondary mt-3 col-7";
+document.getElementById("flash").innerHTML = "<i class='fas fa-trash'></i>  <%= flash[:notice] %> ";
+
+document.getElementById("item-<%= @item.id %>").remove();
+document.getElementById("total-order").textContent = "<%= @cart.total_price %>";
+
+document.getElementById("my-cart-btn").innerHTML = "<i class='fas fa-cart-plus mr-1'></i>Mon panier (<%= @cart.items.length %>)";

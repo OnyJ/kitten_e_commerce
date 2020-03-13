@@ -1,0 +1,19 @@
+<div class="container">
+  <div id="flash"></div>
+  <div class="row mt-5 mb-5">
+    <div class="col-lg-6 col-sm-8">
+      <img src= <%= @item.image_url %> style="height: auto; width: 100%">
+    </div>
+    <div class="col-lg-6 col-sm-8">
+      <h3 class="mt-3"><strong><%= @item.title %></h3></strong>
+      <hr class="style1">
+      <h5 class="mt-4"><strong>Prix :</strong> <div class="badge badge-light"><%= @item.price %> €</div></h5>
+      <h5 class="mt-3"><strong>Description : </strong></h5>
+      <p><%= @item.description %></p>
+      <%= link_to "Ajouter au panier", cart_path(@item), method: :put, class: "btn btn-success font-weight-bold mt-5 mb-2" %>
+      <hr class="style1">
+      <p> 
+        <%= link_to "Retourner à l'accueil", root_path %>
+      </p>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+Bonjour cher Administrateur, une nouvelle commande vient d'être passée sur Kitten Pixtore !
+==========================================================
+
+Voici les différents articles qui viennent d'être achetés pour un total de : <%= @order.user.cart.total_price %>
+
+<% @order.items.each do |line| %>
+  <%= line.title %> : <%= line.price %> €
+<% end %>
+ 
+Les informations de l'acheteur sont les suivantes :
+Email : <%= @order.user.email %>
+Profil créé le : <%= @order.user.created_at %>
+Commande numéro : <%= @order.id %>
+
+A bientôt cher Administrateur !

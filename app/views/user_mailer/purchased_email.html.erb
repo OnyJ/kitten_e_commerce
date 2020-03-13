@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Merci d'avoir passé votre commande chez Kitten Pixtore !</h1><br/>
+      <h3>Votre numéro de commande est le <%= @order.id %>
+      <h4>
+        Voici les différents articles que vous avez achetés pour un total de :        
+        <div class="btn btn-small btn-outline-info"><%= @order.user.cart.total_price %></div>
+      </h4>
+      <% @order.items.each do |line| %>
+        <div class="mb-2"><%= line.title %> : <%= line.price.to_f %></div>
+        <img src= <%= line.image_url %> class="mb-5">
+      <% end %>
+      <p>
+        Pour accéder à votre espace client, connectez-vous sur : <%= @url %>
+      </p>
+      <h4>À très vite sur Kitten Pixtore !</h4>
+    </div>
+  </body>
+</html>
+
+

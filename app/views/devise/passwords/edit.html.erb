@@ -1,0 +1,22 @@
+<div class="container-fluid text-center mt-4 mb-4 col-lg-4 col-sm-6 col-md-6">
+  <%= link_to "kitten pixtore.", root_path, class: "navbar-brand mt-4 ml-3 font-weight-bold" %>
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <h2 class="mt-3">Modifier votre mot de passe</h2>
+    <hr>
+    <%= render partial: "layouts/error", locals: { resource: resource } %>
+    <form class="md-5">
+      <fieldset>
+        <div class="form-group mt-3">
+          <div class="mr-5 ml-5">
+            <%= f.password_field :password, autofocus: true, class: "form-control", autocomplete: "new-password", placeholder: "Nouveau mot de passe" %>
+          </div>
+          <small id="emailHelp" class="form-text text-muted"><i class="fas fa-info-circle mr-1"></i>Le nombre de caractères de votre nouveau mot de passe doit être supérieur à 6.</small>
+          <div class="mr-5 ml-5 mt-3">
+            <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "new-password", placeholder: "Confirmation du mot de passe" %>
+          </div>
+        </div>
+        <%= f.submit "Modifier mon mot de passe", class: "btn btn-sm btn-success mt-2 mb-5 font-weight-bold" %>
+      </fieldset>
+    </form>
+  <% end %>
+</div>
