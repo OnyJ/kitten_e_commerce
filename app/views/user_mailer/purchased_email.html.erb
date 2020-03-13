@@ -13,7 +13,7 @@
           <div class="btn btn-small btn-outline-info"><%= @order.user.cart.total_price %></div>
         </h4>
       <% end %>
-      <% @line_items.each do |line| %>
+      <% @order.items.each do |line| %>
         <div class="mb-2"><%= line.title %> : <%= line.price.to_f %></div>
         <img src= <%= line.image_url %> class="mb-5">
       <% end %>

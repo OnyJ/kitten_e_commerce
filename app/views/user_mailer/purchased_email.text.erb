@@ -5,7 +5,7 @@ Voici les différents articles que vous avez achetés pour un total de : <%= @or
 
 Voici le détail de votre commande : <%= @order.user.cart.items[0].to_f %>
 
-<% @line_items.each do |line| %>
+<% @order.items.each do |line| %>
   <div class="mb-2"><%= line.title %> : <%= line.price.to_f %></div>
   <img src= <%= line.image_url %> class="mb-5">
 <% end %>

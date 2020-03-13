@@ -3,7 +3,7 @@ Bonjour cher Administrateur, une nouvelle commande vient d'être passée sur Kit
 
 Voici les différents articles qui viennent d'être achetés pour un total de : <%= @order.user.cart.total_price %>
 
-<% @line_items.each do |line| %>
+<% @order.items.each do |line| %>
   <%= line.title %> : <%= line.price.to_f %> €
 <% end %>
  

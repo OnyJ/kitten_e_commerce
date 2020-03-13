@@ -10,6 +10,9 @@
         Voici les différents articles qui viennent d'être achetés pour un total de :
         <div class="btn btn-small btn-outline-info"><%= @order.user.cart.total_price %></div>
       </h4>
+      <% @order.items.each do |line| %>
+        <%= line.title %> : <%= line.price.to_f %> €
+      <% end %>
       <p>
         Les informations de l'acheteur sont les suivantes :<br>
         <strong>Email : </strong><%= @order.user.email %><br>
