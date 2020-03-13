@@ -9,7 +9,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @amount = current_user.cart.total_price.to_i * 100
+    @amount = current_user.cart.total_price.to_i 
 
     customer = Stripe::Customer.create({
       email: params[:stripeEmail],
@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
 
     charge = Stripe::Charge.create({
       customer: customer.id,
-      amount: @amount,
+      amount: @amount * 100,
       description: "Confirmation de la commande" ,
       currency: 'eur',
     })
@@ -33,15 +33,11 @@ class OrdersController < ApplicationController
       redirect_to cart_path(current_user.cart)
 
     if @order.save
-      empty_cart
+      current_user.cart.line_items.each(&:destroy)
       flash[:notice] = "Your order was successfully taken"
       redirect_to root_path
     else
       redirect_to cart_path(current_user.cart)
     end
-  end
-
-  def empty_cart
-    current_user.cart.line_items.each(&:destroy)
   end
 end
